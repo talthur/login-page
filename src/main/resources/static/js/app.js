@@ -1,5 +1,10 @@
 
 const optionYear = document.querySelector(".select-ano");
+const loginButton = document.querySelector(".login-button");
+const username = document.querySelector("#username");
+const password = document.querySelector("#password");
+const Http = new XMLHttpRequest;
+const urlLogin = "http://localhost:8080/login"
 
 window.addEventListener("load", ()=>{
 
@@ -10,3 +15,19 @@ window.addEventListener("load", ()=>{
     }
 
 })
+
+loginButton.addEventListener("click", ()=>{
+
+    alert("funfando")
+
+    let data = {
+        username:username,
+        password:password
+    }
+
+    fetch(urlLogin, data).then(res=>{console.log(res)}).catch(error=>console.log(error))
+
+
+
+})
+
